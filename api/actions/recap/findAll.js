@@ -1,16 +1,16 @@
 /*
- * Allow to find all the associations
- * @Return [Assos]
+ * Allow to find all the recap
+ * @Return [Recap]
  */
 module.exports = (api) => {
-    const Assos = api.models.Assos;
+    const Recaps = api.models.Recap;
 
     return (req, res) => {
-        let respond = (assos) => {
-            if(assos.lenght === 0){
-                res.status(204).send(assos);
+        let respond = (recaps) => {
+            if(recaps.lenght === 0){
+                res.status(204).send(recaps);
             } else {
-                res.status(200).send(assos);
+                res.status(200).send(recaps);
             }
         };
 
@@ -20,7 +20,7 @@ module.exports = (api) => {
             });
         };
 
-        Assos.findAll()
+        Recaps.findAll()
         .then(respond)
         .catch(returnError);
     };

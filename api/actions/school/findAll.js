@@ -1,16 +1,16 @@
 /*
- * Allow to find all the associations
- * @Return [Assos]
+ * Allow to find all the schools
+ * @Return [Schools]
  */
 module.exports = (api) => {
-    const Assos = api.models.Assos;
+    const Schools = api.models.School;
 
     return (req, res) => {
-        let respond = (assos) => {
-            if(assos.lenght === 0){
-                res.status(204).send(assos);
+        let respond = (schools) => {
+            if(schools.lenght === 0){
+                res.status(204).send(schools);
             } else {
-                res.status(200).send(assos);
+                res.status(200).send(schools);
             }
         };
 
@@ -20,7 +20,7 @@ module.exports = (api) => {
             });
         };
 
-        Assos.findAll()
+        Schools.findAll()
         .then(respond)
         .catch(returnError);
     };
