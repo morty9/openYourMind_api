@@ -14,6 +14,6 @@ module.exports = (api) => {
 	registered_list: Sequelize.STRING
     }, {
         timestamps: true,
-        tableName: 'user' // Forcer l'utilisation du nom de la table specifier
+        tableName: 'students' // Forcer l'utilisation du nom de la table specifier
     });
 }

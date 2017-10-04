@@ -14,6 +14,6 @@ module.exports = (api) => {
 	roles: Sequelize.STRING
     }, {
         timestamps: true,
-        tableName: 'user' // Forcer l'utilisation du nom de la table specifier
+        tableName: 'assos' // Forcer l'utilisation du nom de la table specifier
     });
 }

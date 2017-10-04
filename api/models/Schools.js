@@ -10,6 +10,6 @@ module.exports = (api) => {
         name: Sequelize.STRING,
     }, {
         timestamps: true,
-        tableName: 'user' // Forcer l'utilisation du nom de la table specifier
+        tableName: 'schools' // Forcer l'utilisation du nom de la table specifier
     });
 }
