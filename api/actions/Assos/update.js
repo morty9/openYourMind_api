@@ -5,7 +5,7 @@
  module.exports = (api) => {
    const Asso = api.models.Assos;
 
-   return (req, res) {
+   return (req, res) => {
        let assoId = req.params.id_asso;
 
        let isDestroyed = (data) => {

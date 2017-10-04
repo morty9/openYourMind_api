@@ -5,7 +5,7 @@
  module.exports = (api) => {
    const School = api.models.School;
 
-   return (req, res) {
+   return (req, res) => {
        let schoolId = req.params.id_school;
 
        let isDestroyed = (data) => {

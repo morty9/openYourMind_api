@@ -5,7 +5,7 @@
 module.exports = (api) => {
   const User = api.models.User;
 
-  return (req, res) {
+  return (req, res) => {
       let userId = req.params.id_user;
 
       let isDestroyed = (data) => {

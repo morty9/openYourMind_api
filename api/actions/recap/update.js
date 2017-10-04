@@ -5,7 +5,7 @@
  module.exports = (api) => {
    const Recap = api.models.Recap;
 
-   return (req, res) {
+   return (req, res) => {
        let recapId = req.params.id_recap;
 
        let isDestroyed = (data) => {

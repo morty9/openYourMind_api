@@ -15,14 +15,14 @@ module.exports = (api) => {
     /* ------------- POST ----------------*/
     // Create
     router.post('/',
-        api.middlewares.bodyParser.json(),
+        //api.middlewares.bodyParser.json(),
         // api.middlewares.encryptUserPassword,
         api.actions.users.create);
 
     /* -------------- PUT -------------- */
     // Update
     router.put('/:id',
-        api.middlewares.bodyParser.json(),
+        //api.middlewares.bodyParser.json(),
         // api.middlewares.isConnected,
         // api.middlewares.encryptUserPassword,
         api.actions.users.update);
