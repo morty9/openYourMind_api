@@ -1,0 +1,27 @@
+/*
+* Allow to find all notes
+* @return Note[]
+*/
+module.exports = (api) => {
+    const Note = api.models.Note;
+
+    return (req, res) => {
+        let respond = (notes) => {
+            if(users.lenght === 0){
+                res.status(204).send(notes);
+            } else {
+                res.status(200).send(notes);
+            }
+        };
+
+        let returnError = (err) => {
+            res.status(500).send({ErrorCode: 500,
+                message: JSON.stringify(err)
+            });
+        };
+
+        User.findAll()
+        .then(respond)
+        .catch(returnError);
+    };
+};
