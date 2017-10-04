@@ -5,4 +5,5 @@ module.exports = (api) => {
     api.use('/recap', require('./recap')(api));
     api.use('/school', require('./school')(api));
     api.use('/assos', require('./assos')(api));
+    api.use('/roles', require('./roles')(api));
 };
