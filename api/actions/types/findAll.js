@@ -1,16 +1,16 @@
 /*
- * Allow to find all the recap
- * @Return [Recap]
+ * Allow to find all the type
+ * @Return [Type]
  */
 module.exports = (api) => {
-    const Recaps = api.models.Recap;
+    const Type = api.models.Type;
 
     return (req, res) => {
-        let respond = (recaps) => {
-            if(recaps.lenght === 0){
-                res.status(204).send(recaps);
+        let respond = (type) => {
+            if(type.lenght === 0){
+                res.status(204).send(type);
             } else {
-                res.status(200).send(recaps);
+                res.status(200).send(type);
             }
         };
 
@@ -20,7 +20,7 @@ module.exports = (api) => {
             });
         };
 
-        Recaps.findAll()
+        Type.findAll()
         .then(respond)
         .catch(returnError);
     };

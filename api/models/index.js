@@ -8,21 +8,29 @@ module.exports = (api) => {
         api.settings.db.sql.sequelizeParamSetting
     );
 
-    let user = require('./User')(api);
     let asso = require('./Asso')(api);
+    let evenement = require('./Event')(api);
+    let favoris = require('./Favoris')(api);
+    let inscrit = require('./Inscrit')(api);
     let note = require('./Note')(api);
-    let recap = require('./Recap')(api);
     let role = require('./Role')(api);
     let school = require('./School')(api);
+    let session = require('./Session')(api);
+    let type = require('./Type')(api);
+    let user = require('./User')(api);
     // let authToken = require('./AuthToken')(api);
 
     api.models = {
-        User: user,
         Asso: asso,
+        Evenement: evenement,
+        Favoris: favoris,
+        Inscrit: inscrit,
         Note: note,
-        Recap : recap,
-        Role : role,
+        Role: role,
         School: school,
+        Session: session,
+        Type: type,
+        User: user,
         // AuthToken: authToken
     };
 };

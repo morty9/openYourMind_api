@@ -1,24 +1,24 @@
 /*
- *  Allow to create a school
- * @Return School
+ *  Allow to create a session
+ * @Return Session
  */
 module.exports = (api) => {
-    const School = api.models.School;
+    const Session = api.models.Session;
 
     return (req, res) => {
-        let isCreate = (school) => {
-            if (school) {
-                res.status(201).send(school);
+        let isCreate = (assos) => {
+            if (assos) {
+                res.status(201).send(assos);
             }
             else {
                 res.status(409).send({
                     ErrorCode: 409,
-                    message: 'School already existing'
+                    message: 'Session already existing'
                 })
             }
         }
 
-        School
+        Session
             .build(req.body)
             .save()
             .then(isCreate)

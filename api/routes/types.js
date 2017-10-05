@@ -5,19 +5,19 @@ module.exports = (api) => {
     /* --------------- GET ------------ */
 	// FindAll
     router.get('/',
-        api.actions.recaps.findAll);
+        api.actions.types.findAll);
 
 
     // FindOne
     router.get('/:id',
-        api.actions.recaps.findOne);
+        api.actions.types.findOne);
 
     /* ------------- POST ----------------*/
     // Create
     router.post('/',
         api.middlewares.bodyParser.json(),
         // api.middlewares.encryptUserPassword,
-        api.actions.recaps.create);
+        api.actions.types.create);
 
     /* -------------- PUT -------------- */
     // Update
@@ -25,13 +25,13 @@ module.exports = (api) => {
         api.middlewares.bodyParser.json(),
         // api.middlewares.isConnected,
         // api.middlewares.encryptUserPassword,
-        api.actions.recaps.update);
+        api.actions.types.update);
 
     /* ------------ DELETE --------------- */
     // Delete
     router.delete('/:id',
         // api.middlewares.isConnected,
-        api.actions.recaps.remove);
+        api.actions.types.remove);
 
     return router;
 };

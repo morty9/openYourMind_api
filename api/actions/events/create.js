@@ -1,24 +1,24 @@
 /*
- *  Allow to create a school
- * @Return School
+ *  Allow to create an event
+ * @Return Event
  */
 module.exports = (api) => {
-    const School = api.models.School;
+    const Evenement = api.models.Evenement;
 
     return (req, res) => {
-        let isCreate = (school) => {
-            if (school) {
-                res.status(201).send(school);
+        let isCreate = (evenement) => {
+            if (evenement) {
+                res.status(201).send(evenement);
             }
             else {
                 res.status(409).send({
                     ErrorCode: 409,
-                    message: 'School already existing'
+                    message: 'evenement already existing'
                 })
             }
         }
 
-        School
+        Evenement
             .build(req.body)
             .save()
             .then(isCreate)

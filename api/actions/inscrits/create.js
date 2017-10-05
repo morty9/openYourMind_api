@@ -1,24 +1,24 @@
 /*
- *  Allow to create a school
- * @Return School
+ *  Allow to create an incrit
+ * @Return Inscrit
  */
 module.exports = (api) => {
-    const School = api.models.School;
+    const Inscrit = api.models.Inscrit;
 
     return (req, res) => {
-        let isCreate = (school) => {
-            if (school) {
-                res.status(201).send(school);
+        let isCreate = (fav) => {
+            if (fav) {
+                res.status(201).send(fav);
             }
             else {
                 res.status(409).send({
                     ErrorCode: 409,
-                    message: 'School already existing'
+                    message: 'Inscrit already existing'
                 })
             }
         }
 
-        School
+        Inscrit
             .build(req.body)
             .save()
             .then(isCreate)

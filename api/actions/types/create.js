@@ -1,24 +1,24 @@
 /*
- *  Allow to create a recap
- * @Return Recap
+ *  Allow to create a type
+ * @Return Type
  */
 module.exports = (api) => {
-    const Recap = api.models.Recap;
+    const Type = api.models.Type;
 
     return (req, res) => {
-        let isCreate = (recap) => {
-            if (recap) {
-                res.status(201).send(recap);
+        let isCreate = (type) => {
+            if (type) {
+                res.status(201).send(type);
             }
             else {
                 res.status(409).send({
                     ErrorCode: 409,
-                    message: 'Recap already existing'
+                    message: 'Type already existing'
                 })
             }
         }
 
-        Recap
+        Type
             .build(req.body)
             .save()
             .then(isCreate)

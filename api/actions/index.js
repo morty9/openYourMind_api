@@ -1,11 +1,15 @@
 module.exports = (api) => {
     api.actions = {
         assos: require('./assos')(api),
+        events: require('./events')(api),
+        favoris: require('./favoris')(api),
+        inscrits: require('./inscrits')(api),
         notes: require('./notes')(api),
-        users: require('./users')(api),
+        roles: require('./roles')(api),
         schools: require('./schools')(api),
-        recaps: require('./recaps')(api),
+        sessions: require('./sessions')(api),
+        types: require('./types')(api),
+        users: require('./users')(api),
         // auth: require('./auth')(api),
-        roles: require('./roles')(api)
     };
 };

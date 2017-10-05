@@ -1,19 +1,19 @@
 /*
- * Allow to find a recap
- * @Return Recap
+ * Allow to find an session
+ * @Return Session
  */
 module.exports = (api) => {
-    const Recap = api.models.Recap;
+    const Session = api.models.Session;
 
     return (req, res) => {
-        let respond = (recap) => {
-            if(!recap){
+        let respond = (session) => {
+            if(!session){
                 res.status(404).send({
                     ErrorCode: 404,
-                    Message: "Recap not found"
+                    Message: "Session not found"
                 });
             } else {
-                res.status(200).send(recap);
+                res.status(200).send(session);
             }
         };
 
@@ -24,7 +24,7 @@ module.exports = (api) => {
             });
         };
 
-        Recap.findById(req.params.id)
+        Session.findById(req.params.id)
         .then(respond)
         .catch(returnError);
     };

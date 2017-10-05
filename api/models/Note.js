@@ -7,10 +7,14 @@ module.exports = (api) => {
             autoIncrement: true,
             primaryKey: true
         },
-        students: Sequelize.INTEGER,
-        notes: Sequelize.INTEGER,
+        id_inscrit: Sequelize.INTEGER,
+        id_session: Sequelize.INTEGER,
+        description: Sequelize.STRING
     }, {
         timestamps: true,
-        tableName: 'notes' // Forcer l'utilisation du nom de la table specifier
+        createdAt: false,
+        updatedAt: false,
+        deletedAt: false,
+        tableName: 'note' // Forcer l'utilisation du nom de la table specifier
     });
 }

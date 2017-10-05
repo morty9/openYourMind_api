@@ -1,24 +1,24 @@
 /*
- *  Allow to create a school
- * @Return School
+ *  Allow to create an favoris
+ * @Return Favoris
  */
 module.exports = (api) => {
-    const School = api.models.School;
+    const Favoris = api.models.Favoris;
 
     return (req, res) => {
-        let isCreate = (school) => {
-            if (school) {
-                res.status(201).send(school);
+        let isCreate = (fav) => {
+            if (fav) {
+                res.status(201).send(fav);
             }
             else {
                 res.status(409).send({
                     ErrorCode: 409,
-                    message: 'School already existing'
+                    message: 'Favoris already existing'
                 })
             }
         }
 
-        School
+        Favoris
             .build(req.body)
             .save()
             .then(isCreate)

@@ -7,15 +7,16 @@ module.exports = (api) => {
             autoIncrement: true,
             primaryKey: true
         },
-        schools: Sequelize.INTEGER,
+        id_school: Sequelize.INTEGER,
         name: Sequelize.STRING,
         description: Sequelize.STRING,
-        president: Sequelize.INTEGER,
-        members: Sequelize.INTEGER,
-        type: Sequelize.INTEGER,
-        notes: Sequelize.INTEGER
+        id_user: Sequelize.INTEGER,
+        id_type: Sequelize.INTEGER,
     }, {
         timestamps: true,
+        createdAt: false,
+        updatedAt: false,
+        deletedAt: false,
         tableName: 'assos' // Forcer l'utilisation du nom de la table specifier
     });
 }
