@@ -5,33 +5,33 @@ module.exports = (api) => {
     /* --------------- GET ------------ */
 	// FindAll
     router.get('/',
-        api.actions.notes.findAll);
+        api.actions.recaps.findAll);
 
 
     // FindOne
     router.get('/:id',
-        api.actions.notes.findOne);
+        api.actions.recaps.findOne);
 
     /* ------------- POST ----------------*/
     // Create
     router.post('/',
-        //api.middlewares.bodyParser.json(),
+        api.middlewares.bodyParser.json(),
         // api.middlewares.encryptUserPassword,
-        api.actions.notes.create);
+        api.actions.recaps.create);
 
     /* -------------- PUT -------------- */
     // Update
     router.put('/:id',
-        //api.middlewares.bodyParser.json(),
+        api.middlewares.bodyParser.json(),
         // api.middlewares.isConnected,
         // api.middlewares.encryptUserPassword,
-        api.actions.notes.update);
+        api.actions.recaps.update);
 
     /* ------------ DELETE --------------- */
     // Delete
     router.delete('/:id',
         // api.middlewares.isConnected,
-        api.actions.notes.remove);
+        api.actions.recaps.remove);
 
     return router;
 };

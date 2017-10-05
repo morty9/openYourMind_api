@@ -7,8 +7,8 @@ module.exports = (api) => {
             autoIncrement: true,
             primaryKey: true
         },
-        id_student: Sequelize.INTEGER,
-        note: Sequelize.STRING,
+        students: Sequelize.INTEGER,
+        notes: Sequelize.INTEGER,
     }, {
         timestamps: true,
         tableName: 'notes' // Forcer l'utilisation du nom de la table specifier

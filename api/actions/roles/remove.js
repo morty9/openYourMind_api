@@ -1,5 +1,5 @@
 module.exports = (api) => {
-    const Roles = api.models.Roles;
+    const Roles = api.models.Role;
     const fs = require('fs');
 
     return (req, res) => {
@@ -16,21 +16,21 @@ module.exports = (api) => {
 
         let destroy = (roles) => {
             if(!roles){
-                res.status(404).send({ 
+                res.status(404).send({
                     ErrorCode: 404,
                     Message: "Roles not found"
                 });
             } else {
                 let spawn = require("child_process").spawn;
                 let process = spawn('python3',["modules/valkyri_face_py", "-r", roles.id]);
-                
+
                 fs.unlink(roles.image_path, (err) => {
-                    
+
                 }); // Arrow function de gestion d'erreur obligatoire
 
                 let rolesId = roles.id;
                 Roles.destroy(
-                    { where: { id: rolesId } 
+                    { where: { id: rolesId }
                 }).then(respond).catch((error) => {
                     res.status(500).send(error.message);
                 });

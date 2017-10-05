@@ -25,6 +25,7 @@ module.exports = (api) => {
             .catch(error);
 
         function error(err) {
+          console.log('-->', req.body);
             res.status(500).send({
                 ErrorCode: 500,
                 message: JSON.stringify(err)

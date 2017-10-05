@@ -25,7 +25,7 @@ module.exports = (api) => {
             });
         };
 
-        User.findById(req.params.id)
+        Note.findById(req.params.id)
         .then(respond)
         .catch(returnError);
     };

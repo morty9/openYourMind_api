@@ -1,5 +1,5 @@
 module.exports = (api) => {
-    const User = api.models.User;
+    const Role = api.models.Role;
 
     return (req, res) => {
         let isCreate = (roles) => {
@@ -9,12 +9,12 @@ module.exports = (api) => {
             else {
                 res.status(409).send({
                     ErrorCode: 409,
-                    message: 'User already existing'
+                    message: 'Role already existing'
                 })
             }
         }
-        
-        Roles
+
+        Role
             .build(req.body)
             .save()
             .then(isCreate)
@@ -22,7 +22,7 @@ module.exports = (api) => {
 
         function error(err) {
             res.status(500).send({
-                ErrorCode: 500, 
+                ErrorCode: 500,
                 message: JSON.stringify(err)
             });
         }

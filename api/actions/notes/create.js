@@ -4,7 +4,7 @@
 */
 
 module.exports = (api) => {
-   const Notes = api.models.Note;
+   const Note = api.models.Note;
 
   return (req, res) => {
     let isCreate = (note) => {
@@ -18,7 +18,7 @@ module.exports = (api) => {
       }
     }
 
-    User
+    Note
       .build(req.body)
       .save()
       .then(isCreate)

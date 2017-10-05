@@ -1,10 +1,10 @@
 module.exports = (api) => {
-    const Roles = api.models.Roles;
+    const Roles = api.models.Role;
 
     return (req, res) => {
         let respond = (roles) => {
             if(!roles){
-                res.status(404).send({ 
+                res.status(404).send({
                     ErrorCode: 404,
                     Message: "Roles not found"
                 });

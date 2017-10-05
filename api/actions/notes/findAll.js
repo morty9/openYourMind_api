@@ -7,7 +7,7 @@ module.exports = (api) => {
 
     return (req, res) => {
         let respond = (notes) => {
-            if(users.lenght === 0){
+            if(notes.lenght === 0){
                 res.status(204).send(notes);
             } else {
                 res.status(200).send(notes);
@@ -20,7 +20,7 @@ module.exports = (api) => {
             });
         };
 
-        User.findAll()
+        Note.findAll()
         .then(respond)
         .catch(returnError);
     };

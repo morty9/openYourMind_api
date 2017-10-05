@@ -1,5 +1,5 @@
 module.exports = (api) => {
-    const Roles = api.models.Roles;
+    const Roles = api.models.Role;
 
     return (req, res) => {
         let respond = (result) => {
@@ -14,7 +14,7 @@ module.exports = (api) => {
         };
 
         Roles.update(req.body,
-            { where: { id: req.params.id } 
+            { where: { id: req.params.id }
         }).then(respond)
         .catch(returnError);
     };

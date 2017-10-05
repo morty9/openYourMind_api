@@ -7,13 +7,16 @@ module.exports = (api) => {
             autoIncrement: true,
             primaryKey: true
         },
+        name: Sequelize.STRING,
         firstname: Sequelize.STRING,
-        lastname: Sequelize.STRING,
         email: Sequelize.STRING,
         password: Sequelize.STRING,
-	roles: Sequelize.STRING
+        class: Sequelize.STRING,
+        roles: Sequelize.INTEGER,
+        schools: Sequelize.INTEGER,
+	      fav: Sequelize.INTEGER
     }, {
         timestamps: true,
-        tableName: 'assos' // Forcer l'utilisation du nom de la table specifier
+        tableName: 'students' // Forcer l'utilisation du nom de la table specifier
     });
 }

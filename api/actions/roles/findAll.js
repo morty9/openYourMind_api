@@ -1,9 +1,9 @@
 module.exports = (api) => {
-    const User = api.models.Roles;
+    const Role = api.models.Role;
 
     return (req, res) => {
         let respond = (roles) => {
-            if(users.lenght === 0){
+            if(roles.lenght === 0){
                 res.status(204).send(roles);
             } else {
                 res.status(200).send(roles);
@@ -16,7 +16,7 @@ module.exports = (api) => {
             });
         };
 
-        Roles.findAll()
+        Role.findAll()
         .then(respond)
         .catch(returnError);
     };

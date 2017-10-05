@@ -1,9 +1,9 @@
 /*
- * Allow to update an association
+ * Allow to update a School
  * @Return -
  */
  module.exports = (api) => {
-   const Asso = api.models.Asso;
+   const School = api.models.School;
 
    return (req, res) => {
        let respond = (result) => {
@@ -17,9 +17,9 @@
            });
        };
 
-       Asso.update(req.body,
+       School.update(req.body,
            { where: { id: req.params.id }
        }).then(respond)
        .catch(returnError);
    };
- };
+};

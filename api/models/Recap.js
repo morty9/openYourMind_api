@@ -7,8 +7,10 @@ module.exports = (api) => {
             autoIncrement: true,
             primaryKey: true
         },
-        id_asso: Sequelize.ARRAY(Sequelize.INTEGER),
-        list: Sequelize.ARRAY(Sequelize.INTEGER),
+        //assos: Sequelize.ARRAY(Sequelize.INTEGER),
+        assos: Sequelize.INTEGER,
+        //listInscris: Sequelize.ARRAY(Sequelize.INTEGER),
+        listInscris: Sequelize.INTEGER,
     }, {
         timestamps: true,
         tableName: 'recap' // Forcer l'utilisation du nom de la table specifier

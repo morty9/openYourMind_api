@@ -6,7 +6,7 @@ module.exports = (api) => {
 
     return (req, res) => {
         let respond = (result) => {
-            res.sendStatus(201);
+            res.sendStatus(201).send('OK');
         };
 
         let returnError = (err) => {

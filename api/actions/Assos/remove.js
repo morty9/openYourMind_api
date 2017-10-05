@@ -3,7 +3,7 @@
  * @Return Asso
  */
 module.exports = (api) => {
-    const Asso = api.models.Assos;
+    const Asso = api.models.Asso;
 
     return (req, res) => {
        let assoId = req.params.id_asso;

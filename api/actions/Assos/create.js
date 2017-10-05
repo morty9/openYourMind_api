@@ -3,7 +3,7 @@
  * @Return Assos
  */
 module.exports = (api) => {
-    const Assos = api.models.Assos;
+    const Assos = api.models.Asso;
 
     return (req, res) => {
         let isCreate = (assos) => {
