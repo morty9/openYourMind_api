@@ -1,6 +1,5 @@
 module.exports = (api) => {
-    // api.use('/auth', require('./auth')(api));
-
+    api.use('/auth', require('./auth')(api));
     api.use('/assos', require('./assos')(api));
     api.use('/events', require('./events')(api));
     api.use('/favoris', require('./favoris')(api));

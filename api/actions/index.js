@@ -10,6 +10,6 @@ module.exports = (api) => {
         sessions: require('./sessions')(api),
         types: require('./types')(api),
         users: require('./users')(api),
-        // auth: require('./auth')(api),
+        auth: require('./auth')(api),
     };
 };
