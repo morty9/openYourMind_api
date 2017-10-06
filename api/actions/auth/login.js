@@ -19,9 +19,9 @@ module.exports = (api) => {
         })
         .then((user) => {
             if(user) {
-                userId = user.id;
+                //userId = user.id;
                 return res.status(200).send({
-                    "userId": userId,
+                    "userId": user,
                 });
             } else {
                 return res.status(401).send({code: 401, type:'invalid.credentials', title: 'Identifiants incorrect', message: 'Vos identifiants sont incorrect ou inexistant'});

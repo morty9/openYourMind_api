@@ -8,6 +8,7 @@ module.exports = (api) => {
             primaryKey: true
         },
         id_asso: Sequelize.INTEGER,
+        name: Sequelize.STRING,
         description: Sequelize.STRING,
         date: Sequelize.STRING,
         salle: Sequelize.STRING
